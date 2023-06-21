@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html>
+<head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-widht, initial-scale=1">
+
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+	<link rel="stylesheet" type="text/css" href="footer.css">
+
+
+	<title>Footer</title>
+</head>
+<body>
+  <div style="margin: 24px;">
+		<nav class="navbar navbar-light" style="background-color: #996888;">
+			<div class="container">
+				<a class="navbar-brand" href="index.html">Inicio</a>
+				<ul class="nav navbar-nav">
+					<li >
+                        <a href="menu.html">Menu</a>
+                    </li>
+                    <li>
+                         <a href="footer.html">Footer</a>
+                    </li>
+                     <li>
+                    <a href="perfil.html">perfil</a>
+                    </li>
+                    <li >
+                         <a href="apimovie.html"> Peliculas</a>
+                    </li>
+                    <li class="active">
+                         <a href="cuestionario.html"> cuestionario</a>
+                    </li>
+                    <li >
+                   <a href="Formulario.html"> Formulario</a>
+                   </li>
+                   <li >
+                   <a href="Resultado.html">Resultado</a>
+                   </li>
+                     <li >
+                   <a href="calculadora.html">Calculadora</a>
+                   </li>
+                   <li >
+                  <a href="calculadorafisica.html">Calculadora</a>
+                  </li>
+                </ul> 
+            </div>
+        </nav>    
+    <div>
+      <style>
+         body{
+          align-items: center;
+          justify-content: center;
+          overflow: hidden;
+          margin: 0;
+
+        }
+        .quiz-container{
+          outline: red 1px;
+          background-color: aliceblue;
+          border-radius: 10px;
+          box-shadow:  0 0 10px 2px cornflowerblue;
+          width: 500px;
+          overflow: hidden;
+        }
+        .quiz-header{
+          padding: 4rem;
+        }
+        h2{
+          padding: 1rem;
+          text-align: center;
+          margin: 0;
+        }
+        ul{
+         list-style-type:none;
+         padding: 0;
+        }
+        ul li{
+          font-size: 15px;
+          margin: 10px 0;
+        }
+        ul li label{
+          cursor: pointer;
+        }
+        button{
+         background-color: white;
+         color: rgb(96, 54, 145);
+         border: none;
+         display: block;
+         width: 100%;
+         cursor: pointer;
+         font-size: 15px;
+         font-family: Georgia, 'Times New Roman', Times, serif;
+         padding: 15px;
+        }
+        button:hover{
+          background-color: blueviolet;
+        }
+        button:focus{
+          outline: none;
+          background-color: aquamarine;
+        }
+
+
+      </style>
+      <div class="container">
+        <div class="quiz-container" id="quiz">
+          <div class="quiz-header">
+            <div class="image-container">
+              <img src="image.jpg" alt="Imagen" id="question-image" style="width:200px;
+              height:200px;">
+           
+            <h2 id="question">Question text</h2>
+            <ul>
+              <li>
+              <input type="radio" id="answer" id="a" class="answer">
+              <label for="a" id="a_text">Question</label>
+            </li>
+            <li>
+              <input type="radio" id="answer" id="b" class="answer">
+              <label for="b" id="b_text">Question</label>
+            </li>
+            <li>
+              <input type="radio" id="answer" id="c" class="answer">
+              <label for="c" id="c_text">Question</label>
+            </li>
+            <li>
+              <input type="radio" id="answer" id="d" class="answer">
+              <label for="d" id="d_text">Question</label>
+            </li>
+          </ul>
+     </div>
+          <button id="submit">Submit</button>
+        </div>
+  
+
+        <script>
+            const quizData = [
+            {
+                 question: "cual es mi color favorito",
+                 image:"quizl.jpg",
+                 a:"Amarillo",
+                 b:"Rosa",
+                 c:"Azul",
+                 d:"Blanco",
+                 correct:"a",
+
+            },
+            {
+                 question: "color menos favorito",
+                 image:"quizl.jpg",
+                 a:"amarillo",
+                 b:"Rosa",
+                 c:"Azul",
+                 d:"Blanco",
+                 correct:"c",
+
+            },
+            {
+                 question: "cual es mi actividad",
+                 image:"",
+                 a:"leer",
+                 b:"jugar",
+                 c:"correr",
+                 d:"dibujar",
+                 correct:"a",
+
+            },
+            {
+                 question: " cual es mi deporte favorito",
+                 image:"quizl.jpg",
+                 a:"futbol",
+                 b:"beisbol",
+                 c:"ninguno",
+                 d:"boleybol",
+                 correct:"c",
+
+            },
+            {
+                 question: " mi comida facorita",
+                 image:"quizl.jpg",
+                 a:"tacos",
+                 b:"sushi",
+                 c:"pizza",
+                 d:"hamburgesas",
+                 correct:"b",
+
+            },
+            {
+                 question: "mi juego de mesa favorito",
+                 image:"quizl.jpg",
+                 a:"jenga",
+                 b:"ajedrez",
+                 c:"memorama",
+                 d:"monopoli",
+                 correct:"b",
+
+            },
+            {
+                 question: " mi pelicula favorita",
+                 image:"quizl.jpg",
+                 a:"",
+                 b:"lufy",
+                 c:"",
+                 d:"",
+                 correct:"a",
+
+            },
+            {
+                 question: " mi libro favorito",
+                 image:"quizl.jpg",
+                 a:"titanis",
+                 b:"marianela",
+                 c:"el diario de ana Frank",
+                 d:"otro",
+                 correct:"a",
+
+            },
+            {
+                 question: "cula es tu lugar favorito",
+                 image:"quizl.jpg",
+                 a:"mi casa",
+                 b:"la escuela",
+                 c:"con mis abuelos",
+                 d:"mi cuarto",
+                 correct:"c",
+
+            },
+            {
+                 question: "Donde paso los fines de semana",
+                 image:"quizl.jpg",
+                 a:"saliendo",
+                 b:"con amigos",
+                 c:"en casa",
+                 d:"de viaje",
+                 correct:"a",
+
+            },
+            {
+                 question: "Si pudiera “des-inventar” alguna cosa, cuál sería",
+                 image:"quizl.jpg",
+                 a:"el calor",
+                 b:"el polvo",
+                 c:"las enfermedades",
+                 d:"todas las anteriores",
+                 correct:"d",
+
+            },
+            {
+                 question: " ¿Qué animal te resultaría de lo más aterrador si pudiera hablar?",
+                 image:"quizl.jpg",
+                 a:"las cucarachas",
+                 b:"los delfines",
+                 c:"las lechuzas",
+                 d:"los leones",
+                 correct:"c",
+
+            },
+            {
+                 question: " Si pudiera ser un animal por un día qué animal sería",
+                 image:"quizl.jpg",
+                 a:"un animal terrestre",
+                 b:"un ave",
+                 c:"un insecto",
+                 d:"un animal acuatico",
+                 correct:"b",
+            },
+            {
+                 question: "¿Qué poder me gustaría tener?",
+                 image:"quizl.jpg",
+                 a:"volar",
+                 b:"invisibilidad",
+                 c:"fuerza",
+                 d:"leer la mente",
+                 correct:"d",
+
+            },
+            {
+                 question: "lo que yo nunca haría por las noches es…",
+                 image:"quizl.jpg",
+                 a:"entrar a un mar",
+                 b:"entrar a un bosque",
+                 c:"entrar a un panteon",
+                 d:"comer sandia",
+                 correct:"b",
+
+            },
+            {
+                 question: "me da miedo el modo en que pueda avanzar la tecnología?",
+                 image:"quizl.jpg",
+                 a:"si",
+                 b:"no",
+                 c:"talvez",
+                 d:"no creo que lleguemos a mucho",
+                 correct:"a",
+
+            },
+            {
+                 question: "quien es el mejor personaje de one place",
+                 image:"quizl.jpg",
+                 a:"Nazy",
+                 b:"lufy",
+                 c:"",
+                 d:"",
+                 correct:"a",
+
+            },
+            {
+                 question: "cual es uno de mis miedos",
+                 image:"quizl.jpg",
+                 a:"la oscuridad",
+                 b:"el vacio",
+                 c:"la soledad",
+                 d:"la tristesa",
+                 correct:"b",
+
+            },
+            {
+                 question: "quien es el mejor personaje de one place",
+                 image:"quizl.jpg",
+                 a:"Nazy",
+                 b:"lufy",
+                 c:"",
+                 d:"",
+                 correct:"a",
+
+            },
+            {
+                 question: "quien es el mejor personaje de one place",
+                 image:"quizl.jpg",
+                 a:"Nazy",
+                 b:"lufy",
+                 c:"",
+                 d:"",
+                 correct:"a",
+
+            }
+
+            ]; 
+            const quiz = document.getElementById('quiz');
+            const answerEls = document.querySelectorAll('.answer');
+            const questionEl = document.getElementById('question');
+            const a_text = document.getElementById('a_text');
+            const b_text = document.getElementById('b_text');
+            const c_text = document.getElementById('c_text');
+            const d_text = document.getElementById('d_text');
+            const submitBtn = document.getElementById('submit');
+
+            let currentQuiz = 0;
+            let score = 0;
+
+            loadQuiz();
+
+            function loadQuiz() {
+                deselesctAnswers();
+                const currentQuizData = quizData [currentQuiz];
+                questionEl.innerText = currentQuizData.question;
+                a_text.innerText = currentQuizData.a;
+                b_text.innerText = currentQuizData.b;
+                c_text.innerText = currentQuizData.c;
+                d_text.innerText = currentQuizData.d;
+
+                const questionImage = document.getElementById("question-image");
+                questionImage.src = currentQuizData.image;
+                }
+
+                function deselectAnswers() {
+                    answerEls.forEach(answerEl => answerEl.checked = false);
+                    }
+
+                    function getSelected() {
+                        let answer;
+
+                        answerEls.forEach(answerEl => {
+                            if (answerEl.checked) {
+                            answer = answerEl.id;
+                            }
+                             });
+                        return answer;
+                        }
+                        submitBtn.addEventListener('click', () => {
+                        const answer = getSelected();
+
+                        if(answer) {
+                        if (answer === quizData[currentQuiz].correct){
+                            score++;
+                            }
+
+                            currentQuiz++;
+                            if(currentQuiz < quizData.length) {
+                                loadQuiz()
+                                } else {
+                                    quiz.innerHTML = ` 
+                                    <h2>Contestaste ${score}/${quizData.length} de preguntas correctamente </h2>
+
+                                    <button onclick="location.reload()">Reload</buttton>
+                                    `
+                                    }
+                                  }
+                                })
+        </script>
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-seccion about">
+          <h1>Contactame</h1>
+          <p>Si estas interesado en contactarme, puedes hacerlo a cualquiera de las siguientes redes sociales:</p>
+          <div class="contact-links">
+            <a href="http://www.facebook.com/miperfil" target="_blank"><i
+               class="fab fa-facebook"></i></a>
+            <a href="http://www.instagram.com/miperfil" target="_blank"><i
+               class="fab fa-instagram"></i></a>
+            <a href="http://www.twitter.com/miperfil" target="_blank"><i
+               class="fab fa-twitter"></i></a>
+            <a href="http://www.snapchat.com/miperfil" target="_blank"><i
+               class="fab fa-snapchat"></i></a>
+         </div>
+        </div>
+      </div>
+    </div>
+  </footer>

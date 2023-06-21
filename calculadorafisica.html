@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="footer.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
+    <title>Pagina 2</title>
+</head>
+<body>
+	<div style="margin: 24px;">
+		<nav class="navbar navbar-light" style="background-color: #996888;">
+			<div class="container">
+				<a class="navbar-brand" href="/">Inicio</a>
+				<ul class="nav navbar-nav">
+					<li >
+					    <a href="menu.html">Menu</a>
+					</li>
+					<li>
+					     <a href="footer.html">Footer</a>
+					</li>
+                     <li>
+                     <a href="perfil.html">perfil</a>
+                    </li>
+					<li >
+					     <a href="apimovie.html"> Peliculas</a>
+					</li>
+					<li >
+					     <a href="cuestionario.html"> cuestionario</a>
+					</li>
+                     <li >
+                       <a href="forulario.html"> Formulario</a>
+                   </li>
+                     <li >
+                   <a href="resultado.html">Resultado</a>
+                  </li>
+                  <li >
+                      <a href="calculadora.html">Calculadora</a>
+                     </li>
+                     <li class="active">
+                  <a href="calculadorafisica.html">Calculadora</a>
+                </li>
+				</ul> 
+            </div>
+        </nav>    
+    <div> 
+	
+  <!-- Navbar content -->
+</nav>
+<div class="jumbotron jumbotron-fluid">
+	<div class="container">
+	  <h1 class="display-4">Calculadora de Fisica</h1>
+	  <p class="lead">Los elementos se consideran necesarios para facilitar el aprendizaje de conceptos y la aplicacion de modelos matematicos en el campo de la fisica.</p>
+  
+	</div>
+  </div>
+  <form id="formulario"> 
+  <label for="distancia"> Distancia: </label>
+  <input type="text" id="distancia" name="distancia">
+  <select id="distanciaUnidad">
+	<option value="metros"> metros </option>
+	<option value="pies"> pies </option>
+  </select>
+  <br>
+  <label for="tiempo"> Tiempo: </label>
+  <input type="text" id="tiempo" name="tiempo">
+  <select id="tiempoUnidad">
+	<option value="segundos"> segundos </option>
+	<option value="horas"> horas </option>
+  </select>
+  <br>
+  <label for="velocidadUnidad">Unidades de Velocidad: </label>
+  <select id="velocidadUnidad">
+  <option value="metros-por-segundo"> m/s </option>
+  <option value="pies-por-segundo"> ft/s </option>
+  <option value="kilometros-por-hora"> km/hr </option>
+  <option value="millas-por-hora"> mph </option>
+  </select>
+  <br>
+  <br>
+  
+  <button type="button" class="btn btn-info" value="Calcular" onclick="Calcular()">Calcular</button>
+   
+  </form>
+  <br>
+  <p id="resultado"></p>
+  <p style="color: #2d3ded; background-color: #ee8ce6">Velocidad: <span id="velocidad"></span></p>
+  <p style="color: #2d3ded; background-color: #ee8ce6">Aceleracion: <span id="aceleracion"></span></p>
+  <p style="color: #2d3ded; background-color: #ee8ce6">Rapidez: <span id="rapidez"></span></p>
+  
+  <script type="text/javascript">
+	function Calcular() { 
+  
+	  const distancia = parseFloat(document.getElementById('distancia').value);
+	  const tiempo = parseFloat(document.getElementById('tiempo').value);
+  
+	 //estas tres variables son para poner las unidades metricas
+	  const distanciaUnidad = document.getElementById('distanciaUnidad').value;
+	  const tiempoUnidad = document.getElementById('tiempoUnidad').value;
+	  const velocidadUnidad = document.getElementById('velocidadUnidad').value;
+	  //convertir unidades a sistema Metrico Internacional (SI)
+	   let distanciaSI = 0;
+	   let tiempoSI = 0;
+  
+	   //dependiendo de las unidades que seleccionaste, usa este if
+	   if(distanciaUnidad == 'metros'){  
+		distanciaSI = distancia;
+		 }else if (distanciaUnidad == 'pies'){ 
+		  distanciaSI=distancia /3.281; //son 3 pies por cada metro, por eso la division de 3.281, para mas informacion,
+		}
+		 if(tiempoUnidad == 'segundos'){  
+		 tiempoSI = tiempo;}
+		else if (tiempoUnidad == 'horas'){ 
+		  tiempoSI=tiempo * 3600;// lo mismo que ariba, multiplico por los 3600 para la cantidad de segundos en un minuto(60) por los 60 minutos en una hora
+		}
+		//
+		let velocidad =0;
+		let aceleracion =0;
+		let rapidez =0;
+  
+		if(velocidadUnidad == 'metros-por-segundo'){
+		  velocidad = distancia/ tiempoSI;
+		  rapidez = velocidad;
+		  aceleracion= velocidad/tiempoSI;
+		 
+		  }
+		  else if(velocidadUnidad == 'pies-por-segundo'){
+		  velocidad = (distanciaSi*3.281)/ tiempoSI;
+		  rapidez = velocidad;
+		  aceleracion= velocidad/tiempoSI;
+  
+		   }
+		  else if(velocidadUnidad == 'kilometros-por-segundo'){
+		  velocidad = (distanciaSi/ 1000)/ (tiempoSI / 3600);
+		  rapidez = velocidad;
+		  aceleracion= velocidad / (tiempoSI / 3600);
+  
+		   }
+		  else if(velocidadUnidad == 'millas-por-segundo'){
+		  velocidad = (distanciaSi/ 1609)/ (tiempoSI / 3600);
+		  rapidez = velocidad;
+		  aceleracion= velocidad/ (tiempoSI / 3600);
+		  }
+		  //mostrar resultados
+		   let resultado =' ';
+		  document.getElementById('velocidad').textContent = velocidad.toFixed(2) + ' ' +velocidadUnidad; // el 2, son la cantidad despues del punto decimal
+		  document.getElementById('aceleracion').textContent = aceleracion.toFixed(2) + ' ' + 'm/s 2';
+		  document.getElementById('rapidez').textContent = rapidez.toFixed(2) + ' ' +velocidadUnidad;
+		  document.getElementById('resultado').innerHTML = resultado; // esta es la linea que dice que acepte comandos de HTML en el java script y acepte lo del resultado y lo mande para despues del script.
+			  }
+  </script>
+<footer>
+	<div class="container">
+	  <div class="footer-content">
+		<div class="footer-seccion about">
+		  <h1>Contactame</h1>
+		  <p>Si estas interesado en contactarme, puedes hacerlo a cualquiera de las siguientes redes sociales:</p>
+		  <div class="contact-links">
+			<a href="http://www.facebook.com/miperfil" target="_blank"><i
+			   class="fab fa-facebook"></i></a>
+			<a href="http://www.instagram.com/miperfil" target="_blank"><i
+			   class="fab fa-instagram"></i></a>
+			<a href="http://www.twitter.com/miperfil" target="_blank"><i
+			   class="fab fa-twitter"></i></a>
+			<a href="http://www.snapchat.com/miperfil" target="_blank"><i
+			   class="fab fa-snapchat"></i></a>
+		 </div>
+		</div>
+	  </div>
+	</div>
+  </footer>
+	   
+	  <script type="text/javascript">
+		  //con el siguiente hare que los links de la paguina se abran mediante javascript en una paguina nueva
+		const socialnetworks = document.querySelectorAll('.contact-links a');
+		socialnetworks.foreach(link =>{
+		  link.addEventListener('click', e => {
+		  e.preventDefault();
+		  window.open(link.href, '_blank');
+		});
+	  });
+	 </script>
+</body>
+</html>        
